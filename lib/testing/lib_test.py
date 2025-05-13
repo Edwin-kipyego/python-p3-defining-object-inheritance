@@ -53,6 +53,34 @@ class TestCar:
         assert(my_car.go() == "VRRROOOOOOOOOOOOOOOOOOOOOOOM!!!!!")
 
     def test_fills_tank(self):
-        '''has a method "fill_up_tank" that returns "filling up!"'''
-        my_car = Car(36, 4)
-        assert(my_car.fill_up_tank() == "filling up!")
+        def test_vehicle_has_methods(self):
+            '''Vehicle class has methods "go" and "fill_up_tank".'''
+            assert(hasattr(Vehicle, "go"))
+            assert(hasattr(Vehicle, "fill_up_tank"))
+
+        def test_car_has_methods(self):
+            '''Car class has methods "go" and "fill_up_tank".'''
+            assert(hasattr(Car, "go"))
+            assert(hasattr(Car, "fill_up_tank"))
+
+        def test_vehicle_default_behavior(self):
+            '''Vehicle methods return default expected behavior.'''
+            my_vehicle = Vehicle(48, 4)
+            assert(my_vehicle.go() == "vrrrrrrrooom!")
+            assert(my_vehicle.fill_up_tank() == "filling up!")
+
+        def test_car_default_behavior(self):
+            '''Car methods return default expected behavior.'''
+            my_car = Car(36, 4)
+            assert(my_car.go() == "VRRROOOOOOOOOOOOOOOOOOOOOOOM!!!!!")
+            assert(my_car.fill_up_tank() == "filling up!")
+
+        def test_vehicle_str_method(self):
+            '''Vehicle __str__ method returns correct string representation.'''
+            my_vehicle = Vehicle(48, 4)
+            assert(str(my_vehicle) == "Vehicle with wheel size 48 and 4 wheels")
+
+        def test_car_str_method(self):
+            '''Car __str__ method returns correct string representation.'''
+            my_car = Car(36, 4)
+            assert(str(my_car) == "Car with wheel size 36 and 4 wheels")
